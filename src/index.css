@@ -1,0 +1,9 @@
+* {
+  font-family: 'Nunito', sans-serif;
+  margin     : 0;
+}
+
+.main-container {
+  display         : relative;
+  background-color: #fff;
+}

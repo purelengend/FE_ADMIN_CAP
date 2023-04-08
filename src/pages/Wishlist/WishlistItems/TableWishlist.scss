@@ -1,0 +1,92 @@
+.container{
+  display: flex;
+  .datatable {
+    height: 300px;
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 40px;
+    .datatable-title {
+      width: 100%;
+      font-size: 24px;
+      color: #6439ff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .link {
+        text-decoration: none;
+        color: green;
+        font-weight: 400;
+        border: 1px solid green;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  
+    .cell-with-img {
+      display: flex;
+      align-items: center;
+  
+      .cell-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+    }
+  
+    .cell-with-status {
+      padding: 5px;
+      border-radius: 5px;
+  
+      &.active {
+        color: green;
+        background-color: rgba(0, 128, 0, 0.158);
+      }
+  
+      &.pending {
+        color: goldenrod;
+        background-color: rgba(218, 165, 32, 0.151);
+      }
+  
+      &.passive {
+        color: crimson;
+        background-color: rgba(220, 20, 60, 0.144);
+      }
+    }
+  
+    .cell-action {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  
+      .view-button {
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: darkblue;
+        border: 1px dotted rgba(0, 0, 139, 0.5);
+        cursor: pointer;
+      }
+  
+      .delete-button {
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: crimson;
+        border: 1px dotted rgba(220, 20, 60, 0.5);
+        cursor: pointer;
+      }
+  
+      .edit-button {
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: orange;
+        border: 1px dotted rgba(0, 0, 139, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
