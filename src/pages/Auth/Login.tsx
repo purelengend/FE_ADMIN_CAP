@@ -101,7 +101,7 @@ export default function Login({
                         {...register('password')}
                       />
                     </div>
-                    <span className='mb-4'>
+                    {/* <span className='mb-4'>
                       Does not have an admin account yet?
                       <a
                         onClick={(e) => {
@@ -111,7 +111,7 @@ export default function Login({
                       >
                         Register
                       </a>
-                    </span>
+                    </span> */}
                     <input
                       type='submit'
                       value='Log In'
