@@ -1,7 +1,11 @@
 import { Discount } from "../model/Discount";
 import Http from "../utils/http";
+import { HostUrl } from "./HostUrl";
 
-const http = new Http("http://localhost:9000").instance;
+const baseUrl = HostUrl.length > 0 ? HostUrl : "http://localhost:9000";
+const http = new Http(`${baseUrl}`).instance;
+
+// const http = new Http("http://localhost:9000").instance;
 export const getDiscounts = () => http.get<Discount[]>('discount')
 export const getDiscount = (id: string) => http.get<Discount>(`discount/${id}`)
 export const addDiscount = (discount: Omit<Discount, 'id' | 'fileListProductId'>) => {

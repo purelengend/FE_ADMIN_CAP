@@ -1,7 +1,10 @@
 import { Product } from "../model/Product";
 import Http from "../utils/http";
+import { HostUrl } from "./HostUrl";
 
-const http = new Http("http://localhost:3000/product").instance;
+const baseUrl = HostUrl.length > 0 ? HostUrl : "http://localhost:3000";
+const http = new Http(`${baseUrl}/product`).instance;
+
 export const getProducts = () => http.get<Product[]>('')
 export const getProduct = (id: string) => http.get<Product>(`${id}`)
 export const addProduct = (product: Omit<Product, 'id'>) => http.post<Product>('create', product)
