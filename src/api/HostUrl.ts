@@ -1,1 +1,1 @@
-export const HostUrl = "";
+export const HostUrl = "https://k8s-default-ingressc-93845aa3dc-155251667.ap-southeast-1.elb.amazonaws.com";
