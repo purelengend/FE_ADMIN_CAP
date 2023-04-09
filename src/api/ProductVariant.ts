@@ -2,8 +2,11 @@ import { ProductVariant } from "../model/ProductVariant";
 import Http from "../utils/http";
 import { Size } from "../model/Size";
 import { Color } from "../model/Color";
+import { HostUrl } from "./HostUrl";
 
-const http = new Http("http://localhost:3002/inventory").instance;
+const baseUrl = HostUrl.length > 0 ? HostUrl : "http://localhost:3002";
+const http = new Http(`${baseUrl}/inventory`).instance;
+
 export const getProductVariantByProductId = (id: string) =>
   http.get<ProductVariant[]>(`getProductVariantByProductId/${id}`)
 
