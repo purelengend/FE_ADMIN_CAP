@@ -15,33 +15,6 @@ export default function TableOrder() {
     refetchOnMount: 'always',
   })
 
-  // const queryClient = useQueryClient()
-
-  // const deleteColorMutation = useMutation({
-  //   mutationFn: (id: number) => deleteColor(id),
-  //   onSuccess: () => {
-  //     toast.success(`Delete succeed!`)
-  //     queryClient.invalidateQueries({ queryKey: ['color'], exact: true })
-  //   },
-  // })
-
-  const handleDelete = (params: any) => {
-    // Swal.fire({
-    //   title: 'Are you sure?',
-    //   text: 'This discount and its children will be removed permanently',
-    //   icon: 'error',
-    //   color: '#6439ff',
-    //   showCancelButton: true,
-    //   confirmButtonColor: '#d33',
-    //   cancelButtonColor: '#666',
-    //   confirmButtonText: 'Yes',
-    // }).then((result) => {
-    //   if (result.isConfirmed) {
-    //     deleteDiscountMutation.mutate(params.id)
-    //   }
-    // })
-  }
-
   const actionColumn = [
     {
       field: 'action',
@@ -56,9 +29,6 @@ export default function TableOrder() {
             >
               <div className='view-button'>View</div>
             </Link>
-            <div className='delete-button' onClick={() => handleDelete(params)}>
-              Delete
-            </div>
           </div>
         )
       },

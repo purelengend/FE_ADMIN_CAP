@@ -54,7 +54,6 @@ function App() {
 
           <Route path='reviews'>
             <Route index element={<ListReview />} />
-            {/* <Route path='detail/:uuid' element={<ViewCart />} /> */}
           </Route>
 
           <Route path='cart'>

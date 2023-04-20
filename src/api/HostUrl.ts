@@ -1,1 +1,2 @@
-export const HostUrl = "http://k8s-default-ingressc-93845aa3dc-155251667.ap-southeast-1.elb.amazonaws.com";
+export const HostUrl = "https://capstonefudn.com";
+//http://k8s-default-ingressc-93845aa3dc-1054393833.ap-southeast-1.elb.amazonaws.com

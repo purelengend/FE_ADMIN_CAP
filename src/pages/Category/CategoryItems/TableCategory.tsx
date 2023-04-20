@@ -1,8 +1,6 @@
 import { DataGrid } from '@mui/x-data-grid'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import Swal from 'sweetalert2'
 import { getAllCategories } from '../../../api/Category.api'
 
 import ListSpinner from '../../../components/spinner/ListSpinner'
@@ -25,39 +23,39 @@ export default function TableCategory() {
   //   },
   // })
 
-  const handleDelete = (params: any) => {
-    // Swal.fire({
-    //   title: 'Are you sure?',
-    //   text: 'This discount and its children will be removed permanently',
-    //   icon: 'error',
-    //   color: '#6439ff',
-    //   showCancelButton: true,
-    //   confirmButtonColor: '#d33',
-    //   cancelButtonColor: '#666',
-    //   confirmButtonText: 'Yes',
-    // }).then((result) => {
-    //   if (result.isConfirmed) {
-    //     deleteDiscountMutation.mutate(params.id)
-    //   }
-    // })
-  }
+  // const handleDelete = (params: any) => {
+  // Swal.fire({
+  //   title: 'Are you sure?',
+  //   text: 'This discount and its children will be removed permanently',
+  //   icon: 'error',
+  //   color: '#6439ff',
+  //   showCancelButton: true,
+  //   confirmButtonColor: '#d33',
+  //   cancelButtonColor: '#666',
+  //   confirmButtonText: 'Yes',
+  // }).then((result) => {
+  //   if (result.isConfirmed) {
+  //     deleteDiscountMutation.mutate(params.id)
+  //   }
+  // })
+  // }
 
-  const actionColumn = [
-    {
-      field: 'action',
-      headerName: 'Action',
-      width: 200,
-      renderCell: (params: any) => {
-        return (
-          <div className='cell-action'>
-            <div className='delete-button' onClick={() => handleDelete(params)}>
-              Delete
-            </div>
-          </div>
-        )
-      },
-    },
-  ]
+  // const actionColumn = [
+  //   {
+  //     field: 'action',
+  //     headerName: 'Action',
+  //     width: 200,
+  //     renderCell: (params: any) => {
+  //       return (
+  //         <div className='cell-action'>
+  //           <div className='delete-button' onClick={() => handleDelete(params)}>
+  //             Delete
+  //           </div>
+  //         </div>
+  //       )
+  //     },
+  //   },
+  // ]
   return (
     <div className='datatable'>
       <div className='datatable-title'>
@@ -71,7 +69,7 @@ export default function TableCategory() {
         <DataGrid
           className='datagrid'
           rows={data?.data ?? []}
-          columns={categoryColumns.concat(actionColumn)}
+          columns={categoryColumns}
           pageSize={9}
           rowsPerPageOptions={[9]}
           checkboxSelection

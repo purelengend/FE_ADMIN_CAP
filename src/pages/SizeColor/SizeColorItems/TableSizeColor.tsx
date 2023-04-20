@@ -33,6 +33,9 @@ export default function TableSizeColor() {
       toast.success(`Delete succeed!`)
       queryClient.invalidateQueries({ queryKey: ['color'], exact: true })
     },
+    onError: () => {
+      toast.error('Delete failed!')
+    },
   })
 
   const deleteSizeMutation = useMutation({
@@ -40,6 +43,9 @@ export default function TableSizeColor() {
     onSuccess: () => {
       toast.success(`Delete succeed!`)
       queryClient.invalidateQueries({ queryKey: ['size'], exact: true })
+    },
+    onError: () => {
+      toast.error('Delete failed!')
     },
   })
 
@@ -75,7 +81,6 @@ export default function TableSizeColor() {
         deleteColorMutation.mutate(params.id)
       }
     })
-    console.log(params.id)
   }
   const actionColumnSize = [
     {

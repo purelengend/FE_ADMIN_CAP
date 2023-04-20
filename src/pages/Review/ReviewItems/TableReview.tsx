@@ -25,38 +25,38 @@ export default function TableReview() {
       queryClient.invalidateQueries({ queryKey: ['reviews'], exact: true })
     },
   })
-  const handleDelete = (params: any) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'This discount and its children will be removed permanently',
-      icon: 'error',
-      color: '#6439ff',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#666',
-      confirmButtonText: 'Yes',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteReviewMutation.mutate(params.id)
-      }
-    })
-  }
-  const actionColumn = [
-    {
-      field: 'action',
-      headerName: 'Action',
-      width: 200,
-      renderCell: (params: any) => {
-        return (
-          <div className='cell-action'>
-            <div className='delete-button' onClick={() => handleDelete(params)}>
-              Delete
-            </div>
-          </div>
-        )
-      },
-    },
-  ]
+  // const handleDelete = (params: any) => {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: 'This discount and its children will be removed permanently',
+  //     icon: 'error',
+  //     color: '#6439ff',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#d33',
+  //     cancelButtonColor: '#666',
+  //     confirmButtonText: 'Yes',
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       deleteReviewMutation.mutate(params.id)
+  //     }
+  //   })
+  // }
+  // const actionColumn = [
+  //   {
+  //     field: 'action',
+  //     headerName: 'Action',
+  //     width: 200,
+  //     renderCell: (params: any) => {
+  //       return (
+  //         <div className='cell-action'>
+  //           <div className='delete-button' onClick={() => handleDelete(params)}>
+  //             Delete
+  //           </div>
+  //         </div>
+  //       )
+  //     },
+  //   },
+  // ]
   return (
     <div className='datatable'>
       <div className='datatable-title'>Review List</div>
@@ -65,7 +65,7 @@ export default function TableReview() {
         <DataGrid
           className='datagrid'
           rows={data?.data ?? []}
-          columns={reviewColumns.concat(actionColumn)}
+          columns={reviewColumns}
           pageSize={9}
           rowsPerPageOptions={[9]}
           checkboxSelection
