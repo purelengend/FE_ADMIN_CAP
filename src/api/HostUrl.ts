@@ -1,2 +1,3 @@
-export const HostUrl = "https://capstonefudn.com";
+export const HostUrl = "";
 
+// https://capstonefudn.com
